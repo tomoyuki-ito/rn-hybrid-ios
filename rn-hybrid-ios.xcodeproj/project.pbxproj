@@ -12,9 +12,12 @@
 		DCD18368208ED6B1001D5BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD18366208ED6B1001D5BB9 /* Main.storyboard */; };
 		DCD1836A208ED6B2001D5BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD18369208ED6B2001D5BB9 /* Assets.xcassets */; };
 		DCD1836D208ED6B2001D5BB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD1836B208ED6B2001D5BB9 /* LaunchScreen.storyboard */; };
+		F9E4974CE620A01C5DE7B218 /* Pods_rn_hybrid_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992D2FA7644A787F1135AFB6 /* Pods_rn_hybrid_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20A2D6480B4D277F2643A232 /* Pods-rn-hybrid-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn-hybrid-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rn-hybrid-ios/Pods-rn-hybrid-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		992D2FA7644A787F1135AFB6 /* Pods_rn_hybrid_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rn_hybrid_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD1835F208ED6B1001D5BB9 /* rn-hybrid-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rn-hybrid-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD18362208ED6B1001D5BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCD18364208ED6B1001D5BB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		DCD18369208ED6B2001D5BB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCD1836C208ED6B2001D5BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCD1836E208ED6B2001D5BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F474B634433692196AABEB08 /* Pods-rn-hybrid-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn-hybrid-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-rn-hybrid-ios/Pods-rn-hybrid-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E4974CE620A01C5DE7B218 /* Pods_rn_hybrid_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1628F5667E50070D3EF8D795 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20A2D6480B4D277F2643A232 /* Pods-rn-hybrid-ios.debug.xcconfig */,
+				F474B634433692196AABEB08 /* Pods-rn-hybrid-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		519C0FA55364BE3648474B1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				992D2FA7644A787F1135AFB6 /* Pods_rn_hybrid_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCD18356208ED6B1001D5BB9 = {
 			isa = PBXGroup;
 			children = (
 				DCD18361208ED6B1001D5BB9 /* rn-hybrid-ios */,
 				DCD18360208ED6B1001D5BB9 /* Products */,
+				1628F5667E50070D3EF8D795 /* Pods */,
+				519C0FA55364BE3648474B1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCD18371208ED6B2001D5BB9 /* Build configuration list for PBXNativeTarget "rn-hybrid-ios" */;
 			buildPhases = (
+				578AAB08FED30EC809D76BA7 /* [CP] Check Pods Manifest.lock */,
 				DCD1835B208ED6B1001D5BB9 /* Sources */,
 				DCD1835C208ED6B1001D5BB9 /* Frameworks */,
 				DCD1835D208ED6B1001D5BB9 /* Resources */,
+				D4AAF30C8E448C7C4A2CA4CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		578AAB08FED30EC809D76BA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rn-hybrid-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4AAF30C8E448C7C4A2CA4CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-rn-hybrid-ios/Pods-rn-hybrid-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
+				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
+				"${BUILT_PRODUCTS_DIR}/React/React.framework",
+				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
+				"${BUILT_PRODUCTS_DIR}/yoga/yoga.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rn-hybrid-ios/Pods-rn-hybrid-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCD1835B208ED6B1001D5BB9 /* Sources */ = {
@@ -278,14 +351,12 @@
 		};
 		DCD18372208ED6B2001D5BB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20A2D6480B4D277F2643A232 /* Pods-rn-hybrid-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "rn-hybrid-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coroco3.rn-hybrid-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -295,14 +366,12 @@
 		};
 		DCD18373208ED6B2001D5BB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F474B634433692196AABEB08 /* Pods-rn-hybrid-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "rn-hybrid-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coroco3.rn-hybrid-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
