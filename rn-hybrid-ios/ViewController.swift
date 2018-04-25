@@ -21,26 +21,41 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func highScoreButtonTapped(sender : UIButton) {
-        NSLog("Hello")
+    @IBAction func profileTapped(sender : UIButton) {
+        let vc = createReactViewController(moduleName: "Profile", message: "This is Profile Screen!")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func accountTapped(sender : UIButton) {
+        let vc = createReactViewController(moduleName: "Account", message: "")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func otherTapped(sender : UIButton) {
+        let vc = createReactViewController(moduleName: "Other", message: "")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @objc private func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    private func createReactViewController(moduleName: String, message: String) -> UIViewController {
         let jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios")
-        let mockData:NSDictionary = ["scores":
-            [
-                ["name":"Alex", "value":"42"],
-                ["name":"Joel", "value":"10"]
-            ]
-        ]
+        let props: [AnyHashable: Any] = ["message": message]
         
         let rootView = RCTRootView(
             bundleURL: jsCodeLocation,
-            moduleName: "RNHighScores",
-            initialProperties: mockData as [NSObject : AnyObject],
+            moduleName: moduleName,
+            initialProperties: props,
             launchOptions: nil
         )
         let vc = UIViewController()
         vc.view = rootView
-        self.present(vc, animated: true, completion: nil)
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(close))
+        let navi = UINavigationController(rootViewController: vc)
+        return navi
     }
-
+    
 }
 
