@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC3628392093215B00D206E2 /* NativeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3628382093215B00D206E2 /* NativeService.swift */; };
+		DC36283C209321F300D206E2 /* NativeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC36283B209321F300D206E2 /* NativeRequest.m */; };
 		DCD18363208ED6B1001D5BB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD18362208ED6B1001D5BB9 /* AppDelegate.swift */; };
 		DCD18365208ED6B1001D5BB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD18364208ED6B1001D5BB9 /* ViewController.swift */; };
 		DCD18368208ED6B1001D5BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD18366208ED6B1001D5BB9 /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* Begin PBXFileReference section */
 		20A2D6480B4D277F2643A232 /* Pods-rn-hybrid-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rn-hybrid-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rn-hybrid-ios/Pods-rn-hybrid-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		992D2FA7644A787F1135AFB6 /* Pods_rn_hybrid_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rn_hybrid_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC36283420930E3100D206E2 /* rn-hybrid-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rn-hybrid-ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC3628382093215B00D206E2 /* NativeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeService.swift; sourceTree = "<group>"; };
+		DC36283A209321F300D206E2 /* NativeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeRequest.h; sourceTree = "<group>"; };
+		DC36283B209321F300D206E2 /* NativeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeRequest.m; sourceTree = "<group>"; };
 		DCD1835F208ED6B1001D5BB9 /* rn-hybrid-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rn-hybrid-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD18362208ED6B1001D5BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCD18364208ED6B1001D5BB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC36283320930DD900D206E2 /* NativeModules */ = {
+			isa = PBXGroup;
+			children = (
+				DC36283A209321F300D206E2 /* NativeRequest.h */,
+				DC36283B209321F300D206E2 /* NativeRequest.m */,
+				DC3628382093215B00D206E2 /* NativeService.swift */,
+			);
+			path = NativeModules;
+			sourceTree = "<group>";
+		};
 		DCD18356208ED6B1001D5BB9 = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +94,13 @@
 		DCD18361208ED6B1001D5BB9 /* rn-hybrid-ios */ = {
 			isa = PBXGroup;
 			children = (
+				DC36283320930DD900D206E2 /* NativeModules */,
 				DCD18362208ED6B1001D5BB9 /* AppDelegate.swift */,
 				DCD18364208ED6B1001D5BB9 /* ViewController.swift */,
 				DCD18366208ED6B1001D5BB9 /* Main.storyboard */,
 				DCD18369208ED6B2001D5BB9 /* Assets.xcassets */,
 				DCD1836B208ED6B2001D5BB9 /* LaunchScreen.storyboard */,
+				DC36283420930E3100D206E2 /* rn-hybrid-ios-Bridging-Header.h */,
 				DCD1836E208ED6B2001D5BB9 /* Info.plist */,
 			);
 			path = "rn-hybrid-ios";
@@ -122,6 +140,7 @@
 				TargetAttributes = {
 					DCD1835E208ED6B1001D5BB9 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -209,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD18365208ED6B1001D5BB9 /* ViewController.swift in Sources */,
+				DC3628392093215B00D206E2 /* NativeService.swift in Sources */,
+				DC36283C209321F300D206E2 /* NativeRequest.m in Sources */,
 				DCD18363208ED6B1001D5BB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,11 +375,17 @@
 			baseConfigurationReference = 20A2D6480B4D277F2643A232 /* Pods-rn-hybrid-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "rn-hybrid-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coroco3.rn-hybrid-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rn-hybrid-ios/rn-hybrid-ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -369,11 +396,16 @@
 			baseConfigurationReference = F474B634433692196AABEB08 /* Pods-rn-hybrid-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "rn-hybrid-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coroco3.rn-hybrid-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rn-hybrid-ios/rn-hybrid-ios-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
